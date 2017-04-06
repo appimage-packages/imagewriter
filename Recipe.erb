@@ -30,7 +30,7 @@ mv /app.Dir/usr/bin/<%= binary %> .
 mv /app.Dir/usr/share/applications/org.kde.<%= binary %>.desktop <%= binary %>.desktop
 cp /opt/usr/share/icons/breeze/devices/64/drive-removable-media.svg .
 
-mkdir ./etc; cp /etc/mime.types $_
+cp /etc/mime.types ./etc/
 
 cp -rfv /usr/share/mime ./usr/share/
 update-mime-database ./usr/share/mime
