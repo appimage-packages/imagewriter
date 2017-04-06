@@ -41,11 +41,9 @@ mkdir -p ./plugins; cp -r /opt/usr/plugins/{bearer,generic} $_
 mv /opt/usr/plugins/kf5/* ./plugins/ || true
 
 #move arch libs into same dir as rest
-mv /opt/usr/lib/x86_64-linux-gnu/pkgconfig/* /opt/usr/lib/pkgconfig/
-rmdir /opt/usr/lib/x86_64-linux-gnu/pkgconfig
-mv /opt/usr/lib/x86_64-linux-gnu/cmake/* /opt/usr/lib/cmake/
-rmdir /opt/usr/lib/x86_64-linux-gnu/cmake
-mv /opt/usr/lib/x86_64-linux-gnu/* /opt/usr/lib/
+mv /opt/usr/lib/x86_64-linux-gnu/pkgconfig/* /opt/usr/lib/pkgconfig/ || true
+rmdir /opt/usr/lib/x86_64-linux-gnu/pkgconfig || true
+mv /opt/usr/lib/x86_64-linux-gnu/* /opt/usr/lib/ || true
 
 #Uncomment for sound
 #cp -rfv /opt/usr/lib/qt5/plugins/phonon4qt5_backend
