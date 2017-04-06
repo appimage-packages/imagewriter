@@ -1,0 +1,15 @@
+name: imagewriter
+binary: imagewriter
+packages:
+  - libudev-dev
+build_kf5: true
+frameworks:
+  - extra-cmake-modules
+  - ki18n
+  - kauth
+kde_deps: ''
+type: git
+url: http://anongit.kde.org/imagewriter
+buildsystem: cmake
+buildoptions: '-DCMAKE_INSTALL_PREFIX:PATH=/app.Dir/usr -DKDE_INSTALL_SYSCONFDIR=/app.Dir/etc -DBUILD_TESTING=OFF'
+dependencies: false
