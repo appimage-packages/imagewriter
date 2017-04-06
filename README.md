@@ -1,6 +1,6 @@
 # imagewriter
 Master branch:
-[![Build Status](http://aci.pangea.pub/job/imagewriter-master-appimage/badge/icon)](http://aci.pangea.pub/job/imagewriter-master-appimage/)
+[![Build Status](http://aci.pangea.pub/job/imagewriter-make-it-cool-appimage/badge/icon)](http://aci.pangea.pub/job/imagewriter-make-it-cool-appimage/)
 
 AppImage for KDE imagewriter
 
@@ -10,4 +10,4 @@ https://www.kde.org/
 
 S3 Download:
 master:
-https://s3-eu-central-1.amazonaws.com/ds9-apps/index.html#!/imagewriter-master-appimage%2F
+https://s3-eu-central-1.amazonaws.com/ds9-apps/index.html#!/imagewriter-make-it-cool-appimage%2F
