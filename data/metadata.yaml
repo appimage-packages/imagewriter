@@ -8,7 +8,8 @@ frameworks:
   - ki18n
   - kauth
   - breeze-icons
-kde_deps: ''
+kde_deps:
+  - polkit-kde-agent-1
 type: git
 url: http://anongit.kde.org/imagewriter
 buildsystem: cmake
