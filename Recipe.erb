@@ -31,7 +31,7 @@ mv /app.Dir/usr/share/applications/org.kde.<%= binary %>.desktop <%= binary %>.d
 cp /opt/usr/share/icons/breeze/devices/64/drive-removable-media.svg .
 
 cp /etc/mime.types ./etc/
-
+mv /opt/etc/dbus-1/system.d/org.kde.kf5auth.conf ./etc/dbus-1/system.d/
 cp -rfv /usr/share/mime ./usr/share/
 update-mime-database ./usr/share/mime
 
@@ -39,7 +39,8 @@ update-mime-database ./usr/share/mime
 mkdir -p ./plugins; cp -r /opt/usr/plugins/{bearer,generic} $_
 # Bring in kf5 plugins
 mv /opt/usr/plugins/kf5/* ./plugins/ || true
-
+mv /opt/usr/plugins/kauth/backend/* ./plugins/
+mv /opt/usr/plugins/kauth/helper/* ./plugins/
 #move arch libs into same dir as rest
 mv /opt/usr/lib/x86_64-linux-gnu/pkgconfig/* /opt/usr/lib/pkgconfig/ || true
 rmdir /opt/usr/lib/x86_64-linux-gnu/pkgconfig || true
@@ -57,10 +58,12 @@ mv /opt/usr/lib/x86_64-linux-gnu/* /opt/usr/lib/ || true
 rsync -aruxv --progress /opt/usr/resources/ ./usr/bin/
 rsync -aruxv --progress /opt/usr/translations/ ./usr/bin/
 
-mkdir ./lib
+
 mv /opt/usr/libexec/Qt* ./usr/bin/ || true
 mv /app.Dir/usr/lib/x86_64-linux-gnu/libexec/kauth/imagewriter_helper  ./usr/bin/
+mv /opt/usr/lib/x86_64-linux-gnu/libexec/kauth/* ./usr/bin/
 
+mkdir ./lib
 unset LD_LIBRARY_PATH
 ~/./linuxdeployqt-1-x86_64.AppImage <%= name %> -verbose=3 -bundle-non-qt-libs -qmldir=/opt/usr/qml
 
