@@ -18,7 +18,7 @@
 # You should have received a copy of the GNU Lesser General Public
 # License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 export PATH=/opt/usr/bin:/root/.rbenv/bin:/root/.rbenv/shims:$PATH
-export CLANG_ROOT=/usr
+export CPATH=/opt/usr/include/gstreamer-1.0:/opt/usr/include:/opt/usr/include/python3.5:/usr/include
 ln -s /usr/bin/clang++-3.8 /usr/bin/clang++
 ln -s /usr/bin/clang-3.8 /usr/bin/clang
 # move me to jenkisnfile
