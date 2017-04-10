@@ -40,4 +40,4 @@ rspec /in/tooling/aci/spec/project_rspec.rb --fail-fast
 rspec /in/tooling/aci/spec/recipe_rspec.rb --fail-fast
 rspec /in/tooling/aci/spec/create_appimage_rspec.rb --fail-fast
 
-rm -rfv /source/*
+#rm -rfv /source/*
