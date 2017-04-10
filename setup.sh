@@ -19,7 +19,8 @@
 # License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 export PATH=/opt/usr/bin:/root/.rbenv/bin:/root/.rbenv/shims:$PATH
 export CLANG_ROOT=/usr
-ln -s /usr/bin/clang++3.8 /usr/bin/clang++
+ln -s /usr/bin/clang++-3.8 /usr/bin/clang++
+ln -s /usr/bin/clang-3.8 /usr/bin/clang
 # move me to jenkisnfile
 rm -rfv /app.Dir/*
 
