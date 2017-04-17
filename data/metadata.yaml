@@ -8,6 +8,11 @@ frameworks:
   - ki18n
   - kauth
   - breeze-icons
+  - kwindowsystem
+  - kdbusaddons
+  - kwidgetsaddons
+  - kcrash
+  - kiconthemes
 kde_deps:
   - polkit-kde-agent-1
 deps_on_kf5: false
