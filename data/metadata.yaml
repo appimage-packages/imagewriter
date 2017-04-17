@@ -6,6 +6,7 @@ build_kf5: true
 frameworks:
   - extra-cmake-modules
   - ki18n
+  - kdoctools
   - kauth
   - breeze-icons
   - kwindowsystem
