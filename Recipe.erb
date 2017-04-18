@@ -49,6 +49,7 @@ mv /opt/usr/lib/x86_64-linux-gnu/pkgconfig/* /opt/usr/lib/pkgconfig/ || true
 rmdir /opt/usr/lib/x86_64-linux-gnu/pkgconfig || true
 mv /opt/usr/lib/x86_64-linux-gnu/* /opt/usr/lib/ || true
 
+mkdir ./lib
 #Uncomment for sound
 #cp -rfv /opt/usr/lib/qt5/plugins/phonon4qt5_backend
 #cp /opt/usr/bin/gst* ./usr/bin/
@@ -67,7 +68,7 @@ mv /app.Dir/usr/lib/x86_64-linux-gnu/libexec/* ./usr/bin/ | true
 
 mv /opt/usr/share/knotifications5/policykit1-kde.notifyrc ./usr/share/
 
-mkdir ./lib
+
 unset LD_LIBRARY_PATH
 ~/./linuxdeployqt-1-x86_64.AppImage <%= name %> -verbose=3 -bundle-non-qt-libs -qmldir=/opt/usr/qml
 ~/./linuxdeployqt-1-x86_64.AppImage polkit-kde-authentication-agent-1 -verbose=3 -bundle-non-qt-libs -qmldir=/opt/usr/qml
