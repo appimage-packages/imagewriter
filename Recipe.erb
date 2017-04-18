@@ -27,6 +27,7 @@ rm -f functions.sh
 cd /app.Dir
 #Move binary/desktop/icon into AppDir
 mv /app.Dir/usr/bin/<%= binary %> .
+mv /opt/usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1 .
 mv /app.Dir/usr/share/applications/org.kde.<%= binary %>.desktop <%= binary %>.desktop
 cp /opt/usr/share/icons/breeze/devices/64/drive-removable-media.svg .
 
@@ -148,6 +149,7 @@ EOF
 chmod +x AppRun
 
 mv <%= binary %> ./usr/bin/
+mv polkit-kde-authentication-agent-1 ./usr/bin/
 cp <%= binary %>.desktop ./usr/share/applications/
 cd ~
 
