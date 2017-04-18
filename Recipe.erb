@@ -32,6 +32,7 @@ cp /opt/usr/share/icons/breeze/devices/64/drive-removable-media.svg .
 
 cp /etc/mime.types ./etc/
 mv /opt/etc/dbus-1/system.d/org.kde.kf5auth.conf ./etc/dbus-1/system.d/
+mkdir -p /etc/xdg/autostart; mv /opt/etc/xdg/autostart/polkit-kde-authentication-agent-1.desktop $_
 cp -rfv /usr/share/mime ./usr/share/
 update-mime-database ./usr/share/mime
 
@@ -64,10 +65,12 @@ mv /opt/usr/libexec/Qt* ./usr/bin/ || true
 mv /app.Dir/usr/lib/x86_64-linux-gnu/libexec/kauth/imagewriter_helper  ./usr/bin/
 mv /app.Dir/usr/lib/x86_64-linux-gnu/libexec/* ./usr/bin/ | true
 
+mv /opt/usr/share/knotifications5/policykit1-kde.notifyrc ./usr/share/
+
 mkdir ./lib
 unset LD_LIBRARY_PATH
 ~/./linuxdeployqt-1-x86_64.AppImage <%= name %> -verbose=3 -bundle-non-qt-libs -qmldir=/opt/usr/qml
-
+~/./linuxdeployqt-1-x86_64.AppImage polkit-kde-authentication-agent-1 -verbose=3 -bundle-non-qt-libs -qmldir=/opt/usr/qml
 patch_usr
 glibc_needed
 delete_blacklisted
@@ -143,6 +146,7 @@ export KAUTH_HELPER_PLUGIN_DIR=\$HERE/plugins
 
 EOF
 chmod +x AppRun
+
 mv <%= binary %> ./usr/bin/
 cp <%= binary %>.desktop ./usr/share/applications/
 cd ~
