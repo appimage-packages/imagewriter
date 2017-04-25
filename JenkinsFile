@@ -37,7 +37,7 @@ node('linux') {
                         extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'tooling']], submoduleCfg: [], \
                         userRemoteConfigs: [[url: 'https://github.com/blue-systems/pangea-tooling']]]
                         checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: 'make-it-cool']], doGenerateSubmoduleConfigurations: false, \
-                        extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'imagewriter']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://anongit.kde.org/imagewriter']]]
+                        extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'imagewriter']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/KDE/imagewriter']]]
                     }
                     stage( 'Setup' ) {
                        sh 'echo $PATH'
